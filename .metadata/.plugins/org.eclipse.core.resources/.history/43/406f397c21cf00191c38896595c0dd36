@@ -1,0 +1,71 @@
+package com.emp.controller;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
+
+import com.emp.entities.Employee;
+import com.emp.services.Impl.EmployeeServicesImpl;
+
+
+@ManagedBean(name = "employeeController")
+@SessionScoped
+public class EmployeeController {
+	
+	@EJB
+	public EmployeeServicesImpl empServiceImpl;
+	
+	public String empName;
+	public String empSurname;
+	public double salary;
+	
+	public EmployeeController(String empName,String empSurname,double salary) {
+		this.empName = empName;
+		this.empSurname = empSurname;
+		this.salary = salary;
+	}
+	
+	public EmployeeController() {
+		
+	}
+	
+	public List<Employee> getAllEmployees() {
+		System.out.println("Getting employees");
+		//return "Derick";
+		return empServiceImpl.findAllEmployees();
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+
+	public String getEmpSurname() {
+		return empSurname;
+	}
+
+
+	public void setEmpSurname(String empSurname) {
+		this.empSurname = empSurname;
+	}
+
+
+	public double getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+}

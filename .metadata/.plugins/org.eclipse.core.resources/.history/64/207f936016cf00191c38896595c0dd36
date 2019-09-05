@@ -1,0 +1,7 @@
+package com.emp.services;
+
+public interface EmployeeService {
+
+	List<Employees> findAllEmployees();
+	
+}

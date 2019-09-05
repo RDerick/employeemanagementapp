@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Employees Management</title>
+</h:head>
+<h:body>
+<h3>Employee Details</h3>
+	<h:form id="empForm">
+		<h:dataTable id="empTable" var="emp" border="2"
+			cellspacing="1" cellpadding="1" >
+			<!--<h:column>
+				<c:facet name="header">Employees Names</c:facet>
+                    #{emp.empName}
+                </h:column>
+			 <h:column>
+				<c:facet name="header">Employee Surname</c:facet>
+                    #{emp.empSurname}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Salary</c:facet>
+                    #{emp.empSalary}
+                </h:column> -->
+		</h:dataTable>
+	</h:form>
+	 <p:commandButton id="btnSubmit" value="Find"}">
+    </p:commandButton>  
+</h:body>
+</html>

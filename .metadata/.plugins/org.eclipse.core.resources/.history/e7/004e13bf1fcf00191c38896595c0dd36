@@ -1,0 +1,30 @@
+package com.emp.services.Impl;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.emp.entities.Employee;
+import com.emp.services.EmployeeService;
+
+/**
+ * Session Bean implementation class EmployeeServicesImpl
+ */
+@Stateless
+@LocalBean
+public class EmployeeServicesImpl implements EmployeeService {
+
+	@PersistenceContext
+	private EntityManager em;
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Employee> findAllEmployees(){
+		System.out.println("GETTTING ALL THE EMPLOYEEESSSSSSS");
+		return (List<Employee>) em.createNamedQuery("Employee.findAll");
+	}
+	
+}
